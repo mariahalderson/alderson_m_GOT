@@ -8,7 +8,19 @@
 </head>
 <body>
 	<section id="container">
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/QwievZ1Tx-8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+		<video muted poster="images/vid1_large.png">
+			<!--add video sources here-->
+			<source src="videos/mini_1.mp4" type="video/mp4"> <!--apple will not check for fallback- list mp4 FIRST-->
+			<source src="videos/mini_1.webm" type="video/webm"> 
+			<source src="videos/mini_1.ogg" type="video/ogg"> 
+			Your browser doesn't support video. Use one that doesn't suck!
+
+		</video>
+		<button>play</button>
+		<button>pause</button>
+		<button>rewind</button>
 	</section>
 	
 	<script src="js/main.js"></script>
