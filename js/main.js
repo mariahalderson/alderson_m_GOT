@@ -104,7 +104,6 @@ function back() {
 
 //events
 sigils.forEach(sigil => sigil.addEventListener('click', sigclick));
-// sigils.forEach(sigil => sigil.addEventListener('click', loadMovie));
 closeLightbox.addEventListener('click', closeLBox);
 vidPlayer.addEventListener('ended', closeLBox);
 playPause.addEventListener('click', togglePlay);
