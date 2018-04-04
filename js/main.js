@@ -29,24 +29,20 @@ var info = ["House Stark of Winterfell is a Great House of Westeros, ruling over
 
 //methods/ functions
 function loadMovie(){
-
+	houseInfo.classList.add('hide');
 	//turn on light box
 	lightbox.classList.add('show-lightbox');
-
-//grab the right video based on class name- split yields name
-	var house = this.className.split(' ')[1].capIt();
-	taglines.forEach(tagline => tagline.innerHTML = house);
 
 //put path together and make video load and play
 	vidPlayer.src = `videos/House-${house}.${vidPlayer.currentSrc.split('.')[1]}`;
 	vidPlayer.load();
 
 	vidPlayer.play();
+}
 
-animateBanners(this.dataset.offset);
-addInfo(this.dataset.offset);
 
-} 
+
+
 
 function animateBanners(offset){
 	console.log(600 * offset); //should give valule that we need: banners = 600px
@@ -59,8 +55,19 @@ function addInfo(offset){
 	houseInfo.innerHTML = info[offset];
 }
 
+function sigclick(){
+	//grab the right video based on class name- split yields name
+	var house = this.className.split(' ')[1].capIt();
+	taglines.forEach(tagline => tagline.innerHTML = house);
+
+	animateBanners(this.dataset.offset);
+	addInfo(this.dataset.offset);
+
+}
+
 function closeLBox(){
 	lightbox.classList.remove('show-lightbox');
+	houseInfo.classList.remove('hide');
 	vidPlayer.pause();
 	vidPlayer.currentTime=0;
 }
@@ -98,7 +105,8 @@ function back() {
 
 
 //events
-sigils.forEach(sigil => sigil.addEventListener('click', loadMovie));
+sigils.forEach(sigil => sigil.addEventListener('click', sigclick));
+imageBanner.addEventListener('transitionend', loadMovie);
 closeLightbox.addEventListener('click', closeLBox);
 vidPlayer.addEventListener('ended', closeLBox);
 playPause.addEventListener('click', togglePlay);

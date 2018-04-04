@@ -17,15 +17,24 @@ body { background-image:url(../images/grungeBG.jpg);
 h1 {
 	font-family: 'GOT_font';
 	color:white;
-	margin-top:30px;
-	font-size:1.25em;
+	margin-top:20px;
+	margin-bottom: 20px;
+	font-size:1.5em;
 }
 
 main {
 	position:relative;
-	width:100%;
+	width:80%;
 	text-align:center;
 	top:30px;
+	background: rgba(255,255,255,0.05);
+	margin-left: 10%;
+	padding: 10px;
+}
+
+.hide{
+	visibility: hidden;
+	transition: all 0.5s ease;
 }
 
 #imageContainer {
@@ -107,8 +116,9 @@ main {
 .lightbox {
 	display: none;
 	position: absolute; 
-	top: 0; 
-	width: 100%; 
+	top: 0;
+	right: 25%; 
+	width: 50%; 
 	height: 100%; 
 	text-align: center;
 	background-color: rgba(0,0,0,0.95);
@@ -129,12 +139,12 @@ main {
 
 video {
 	width: 80%;
-	margin-top: 10%;
+	margin-top: 5%;
 	border: thin solid #949393;
 }
 
 .controls{
-	margin-top: 1.5em;
+	margin-top: 0.5em;
 }
 
 .controls {
@@ -163,11 +173,16 @@ video {
 
 .lightbox h1{
 	font-size: 2em;
+	margin-top: 30px;
+	margin-bottom: 10px;
 }
 
 p{
 	display: block;
-	max-width: 50%;
+	max-width: 70%;
 	line-height: 20px;
 	margin: 0 auto;
 }
+
+
+
